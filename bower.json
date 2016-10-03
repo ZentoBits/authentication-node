@@ -1,0 +1,17 @@
+{
+  "name": "authentication-node",
+  "homepage": "https://github.com/ZentoBits/authentication-node",
+  "authors": [
+    "Zachary George <zacharygeorge@Zacharys-MacBook-Pro.local>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
