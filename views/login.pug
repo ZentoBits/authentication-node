@@ -1,0 +1,9 @@
+doctype html
+
+form(method='POST')
+  label(for='email') email
+  input.form-control#email(type='text' name='email' placeholer='you@you.com')
+  label(for='password') password
+  input.form-control#password(type='password' name='password' placeholer='Your Password')
+  a.btn.btn-success.btn-lg(href='/') Cancel
+  input.btn.btn-success.btn-lg(type='submit' value='Submit')
