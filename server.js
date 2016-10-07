@@ -17,11 +17,12 @@ const port = process.env.PORT || 3000
 app.set('port', port)
 app.set('view engine', 'pug')
 
-app.use(express.static('public'))
+//middleware
 app.use(bodyParser.urlencoded({extended: false}))
-
 app.use(session({
-  store: new RedisStore(),
+  store: new RedisStore({
+    url:process.env.REDIS_URL || 'redis://localhost:6379'
+  }),
   secret: 'cheers!'
 }))
 
@@ -30,7 +31,6 @@ app.use((req, res, next) => {
 })
 
 app.use(routes)
-
 app.use((
     err,
     { method, url, headers: { 'user-agent': agent } },
