@@ -1,6 +1,7 @@
-doctype html
+extends layout.pug
 
-h1 Hello!
-
-a.navbar-brand(href='/login') Login
-a.navbar-brand(href='/register') Register
+block content
+  h2 Hello from the index page
+  if user
+    form(method='POST')
+      button(type='submit' name='logout') Logout
