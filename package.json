@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": 6
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -12,16 +15,18 @@
     "url": "git+https://github.com/ZentoBits/authentication-node.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Zakk George",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ZentoBits/authentication-node/issues"
   },
   "homepage": "https://github.com/ZentoBits/authentication-node#readme",
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "connect-redis": "^3.1.0",
     "express": "^4.14.0",
+    "express-session": "^1.14.1",
     "jquery": "^3.1.1",
     "mongoose": "^4.6.2",
     "pug": "^2.0.0-beta6",

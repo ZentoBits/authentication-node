@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+  h2 Hello from the index page
+  if user
+    form(method='POST')
+      button(type='submit' name='logout') Logout
