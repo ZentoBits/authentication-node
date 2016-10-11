@@ -1,4 +1,6 @@
 'use strict'
+
+////// General //////
 const mongoose = require('mongoose')
 const HTML5_EMAIL_VALIDATION = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 

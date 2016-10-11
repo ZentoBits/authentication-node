@@ -1,6 +1,9 @@
 'use strict'
+
+////// General //////
 const  mongoose = require('mongoose')
-  ,   MONGODB_URL = process.env.TEST || 'mongodb://localhost:27017/loginAuth'
+const MONGODB_URL = 'mongodb://steveHarvey:deathnote1@ds053156.mlab.com:53156/loginauth'
+// 'mongodb://localhost:27017/loginAuth'
 
 mongoose.Promise = Promise
 

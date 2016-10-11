@@ -1,4 +1,6 @@
 'use strict'
+
+////// General //////
 const express = require('express')
 const session = require('express-session')
 const bodyParser = require('body-parser')
@@ -19,7 +21,6 @@ app.use(session({
   url: process.env.REDIS_URL || 'redis://localhost:6379',
 	store: new RedisStore(),
 	secret: process.env.SESSION_SECRET || 'loginAuth'
-  // cookie: { secure: true }
 }))
 
 app.use((req,res,next) => {
@@ -28,25 +29,8 @@ app.use((req,res,next) => {
 })
 
 app.use(bodyParser.urlencoded({extended: false}))
-// error handling
-app.use((err,{method, url, headers: {'user-agent': agent}},res,next) => {
-  if(process.env.NODE_ENV === 'production') {
-    res.sendStatus(err.status || 500)
-  } else {
-    res.set('Content-Type', 'text/plain').send(err.stack)
-  }
-
-  const timeStamp     = new Date()
-  const statusCode    = res.statusCode
-  const statusMessage = res.statusMessage
-
-  console.error(
-       `[${timeStamp}] "${`${method} ${url}`}" Error (${statusCode}): "${statusMessage}"`
-     )
-  console.error(err.stack)
-})
 app.use(routes)
-// connect to db then initiate server on port 3000
+
 connect()
   .then(() => {
     app.listen(port, () => {
